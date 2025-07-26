@@ -1,58 +1,78 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import HomeIcon from '@mui/icons-material/Home';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import BookIcon from '@mui/icons-material/Book';
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-import StarRateRoundedIcon from '@mui/icons-material/StarRateRounded';
-import SettingsIcon from '@mui/icons-material/Settings';
-import Checkbox from '@mui/material/Checkbox';
+// TrufApp.jsx
+import React from 'react';
+import './App.css';
+import { FaHome, FaCog, FaStar, FaCreditCard, FaBook, FaEye } from 'react-icons/fa';
+import { MdDateRange, MdLocationOn, MdAccessTime } from 'react-icons/md';
 
-function App() {
-  const [count, setCount] = useState(0)
+const categories = ['Cricket', 'Tennis', 'Football', 'Vollyball'];
 
+const bookings = [
+  { status: 'Booked' },
+  { status: 'Failed' },
+  { status: 'Booked' },
+  { status: 'Failed' },
+];
+
+export default function App() {
   return (
     <>
-      <div className='top'>
+    <div className='top' style={{padding:'0.5rem'}}>
         <h2>𝕿𝖗𝖚𝖋</h2>
-        <div><button>A</button></div>
-      </div>
-      <div className="aside">
-        <div className='box' >
-         
-         <ul><HomeIcon className="home"/>Home</ul>
-         <ul><VisibilityIcon className="home"/>   Tracking</ul>
-         <ul><BookIcon className="home"/>      Booked</ul>
-         <ul><AccountBalanceIcon className="home"/>    Payment</ul>
-         <ul><StarRateRoundedIcon className="home"/> Star</ul>
-         <ul style={{paddingTop:'6rem'}}><SettingsIcon className="home"/>            Settings</ul>
-  
-         </div>
-         <div className="main-content">
-         <div className="header">
-            <div className="filters">
-              <div className="filter-group">
-               <Date></Date>
-                <span>Date</span>
-              </div>
-              <div className="filter-group">
-                <Checkbox></Checkbox>
-                <span>Location</span>
-              </div>
-              <div className="filter-group">
-                
-                <span>Time</span>
-              </div>
-            </div>
-            <div className="profile-icon"></div>
-          </div>
-        </div> 
-        </div>
-      
-    </>
-  )
-}
+        <div><button className='head'>A</button></div>
+      </div>  
+    <div className="app" style={{paddingLeft:'0.5rem'}}>
+      <aside className="sidebar">
+        <nav>
+          <ul>
+            <li><FaHome /> Home</li>
+            <li><FaEye /> Tracking</li>
+            <li><FaBook /> Booked</li>
+            <li><FaCreditCard /> Payment</li>
+            <li><FaStar /> Star</li>
+            <li style={{paddingTop:'6rem'}}><FaCog  /> Settings</li>
+          </ul>
+        </nav>
+      </aside>
 
-export default App
+     <main className="content">
+ 
+    <div className="filters">
+      <button><MdDateRange /> Date</button>
+      <button><MdLocationOn /> Location</button>
+      <button><MdAccessTime /> Time</button>
+    </div>
+
+    <div className="categories">
+      {categories.map(cat => (
+        <label key={cat}>
+          <input type="checkbox" style={{ marginLeft: '9rem' }} /> {cat}
+        </label>
+      ))}
+    </div>
+   <div className='list'>
+    <div className="cards">
+      {bookings.map((b, i) => (
+        <div className="card" key={i}>
+          <div className="img-box"></div>
+          <div className="details">
+            <h3>R.k cricket stadium (1500/-)</h3>
+            <div className="tags">
+              <span className="discount">50% OFF</span>
+              <span>🕒 7pm - 9pm</span>
+            </div>
+            <div className="rating">⭐⭐⭐⭐⭐</div>
+            <div className="location">📍 Sathyamangalam,erode</div>
+          </div>
+          <button className={`status ${b.status.toLowerCase()}`}>{b.status}</button>
+        </div>
+      ))}
+    </div>
+    </div>
+  
+</main>
+
+
+    </div>
+    </>
+  );
+}
