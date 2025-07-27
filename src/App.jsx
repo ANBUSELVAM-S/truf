@@ -4,6 +4,7 @@ import './App.css';
 import { FaHome, FaCog, FaStar, FaCreditCard, FaBook, FaEye } from 'react-icons/fa';
 import { MdDateRange, MdLocationOn, MdAccessTime } from 'react-icons/md';
 
+
 const categories = ['Cricket', 'Tennis', 'Football', 'Vollyball'];
 
 const bookings = [
@@ -12,6 +13,9 @@ const bookings = [
   { status: 'Booked' },
   { status: 'Failed' },
 ];
+function DateSelector() {
+  const [selectedDate, setSelectedDate] = useState("");
+}
 
 export default function App() {
   return (
@@ -35,9 +39,8 @@ export default function App() {
       </aside>
 
      <main className="content">
- 
     <div className="filters">
-      <button><MdDateRange /> Date</button>
+      <button><MdDateRange /> Date </button>
       <button><MdLocationOn /> Location</button>
       <button><MdAccessTime /> Time</button>
     </div>
@@ -49,7 +52,7 @@ export default function App() {
         </label>
       ))}
     </div>
-   <div className='list'>
+   
     <div className="cards">
       {bookings.map((b, i) => (
         <div className="card" key={i}>
@@ -67,7 +70,7 @@ export default function App() {
         </div>
       ))}
     </div>
-    </div>
+ 
   
 </main>
 

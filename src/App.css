@@ -1,9 +1,6 @@
 /* TrufApp.css */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f7f7f7;
-}
+
+
 li:hover {
   background-color: rgb(144, 127, 127);
   color: white;
