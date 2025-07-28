@@ -1,5 +1,7 @@
 /* TrufApp.css */
-
+body{
+  display: fixed;
+}
 
 li:hover {
   background-color: rgb(144, 127, 127);
@@ -9,6 +11,11 @@ li:hover {
   
   
   
+}
+h2{
+  font-size: 2.5rem;
+  padding-left: 3.5rem;
+
 }
 
 .app {
@@ -44,18 +51,28 @@ li:hover {
 
 .app {
   display: flex;
-  height: 100vh;
+  height: 70vh;
   padding-top: 0.5rem;
  
+}
+.date{
+  width:20rem;
+  
+  height: 2.5rem;
+  font-size: 1rem;
+}
+.st{
+  font-size: 1.5rem;
 }
 
 .sidebar {
   width: 220px;
-  height: 34rem;
+  height: 33rem;
   background: #d9d9d9;
   padding: 20px;
   border-right: 1px solid #ccc;
   border-radius: 1rem;
+  font-size: 1.2rem;
 }
 
 .logo {
@@ -79,7 +96,7 @@ li:hover {
   align-items: center;
   gap: 10px;
   font-weight: bold;
-  padding-top: 2.5rem;
+  padding-top: 2rem;
 }
 
 .content {
@@ -87,7 +104,7 @@ li:hover {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 73vh;
   overflow: hidden;
 }
 
@@ -151,8 +168,8 @@ li:hover {
 }
 
 .img-box {
-  width: 80px;
-  height: 60px;
+  width: 90px;
+  height: 120px;
   background: #eee;
   border-radius: 8px;
 }
