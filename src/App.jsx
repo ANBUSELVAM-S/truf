@@ -10,6 +10,7 @@ const bookings = [
   { status: 'Failed' },
   { status: 'Booked' },
   { status: 'Failed' },
+  { status: 'Failed' },{ status: 'Booked' },
 ];
 
 export default function App() {
@@ -80,8 +81,8 @@ export default function App() {
               </label>
             ))}
           </div>
-
-          <div className="cards">
+          <div class="scroll-container">
+          <div className="cards" style={{height: '500px'}}>
             {bookings.map((b, i) => (
               <div className="card" key={i}>
                 <div className="img-box"></div>
@@ -98,7 +99,7 @@ export default function App() {
               </div>
             ))}
           </div>
-
+          </div>
         </main>
       </div>
     </>
