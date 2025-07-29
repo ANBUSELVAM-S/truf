@@ -33,12 +33,12 @@ export default function App() {
               <li><FaBook /> Booked</li>
               <li><FaCreditCard /> Payment</li>
               <li><FaStar /> Star</li>
-              <li style={{ paddingTop: '6rem' }}><FaCog /> Settings</li>
+              <li style={{ paddingTop: '7rem' }}><FaCog /> Settings</li>
             </ul>
           </nav>
         </aside>
 
-        <main className="content" style={{ border: '1px solid black' }}>
+        <main className="content">
           
           {/* ✅ Filters with real inputs */}
           <div className="filters" style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
