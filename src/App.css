@@ -1,6 +1,7 @@
-/* TrufApp.css */
-body{
-  display: fixed;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f7f7;
 }
 
 li:hover {
@@ -8,21 +9,21 @@ li:hover {
   color: white;
   cursor: pointer;
   border-radius: 0.5rem;
-  
-  
-  
 }
-h2{
+
+h2 {
   font-size: 2.5rem;
   padding-left: 3.5rem;
-
 }
 
 .app {
   display: flex;
-  height: 100vh;
+  height: 20rem;
+  padding-top: 0.5rem;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-/* Main Top Bar */
+
 .top {
   height: 7rem;
   background-color: rgba(83, 190, 155, 0.98);
@@ -32,12 +33,9 @@ h2{
   justify-content: space-between;
   padding: 0 2rem;
   flex-wrap: wrap;
-  padding: 2px;
-  
-  
-  
 }
-.head{
+
+.head {
   font-size: 1.5rem;
   color: #000;
   height: 4rem;
@@ -49,25 +47,20 @@ h2{
   border: none;
 }
 
-.app {
-  display: flex;
-  height: 70vh;
-  padding-top: 0.5rem;
- 
-}
-.date{
-  width:20rem;
-  
+.date {
+  width: 30rem;
+  max-width: 20rem;
   height: 2.5rem;
   font-size: 1rem;
 }
-.st{
+
+.st {
   font-size: 1.5rem;
 }
 
 .sidebar {
   width: 220px;
-  height: 33rem;
+  height: 34rem;
   background: #d9d9d9;
   padding: 20px;
   border-right: 1px solid #ccc;
@@ -102,10 +95,12 @@ h2{
 .content {
   flex: 1;
   padding: 20px;
+  height: 34rem;
   display: flex;
   flex-direction: column;
-  height: 73vh;
   overflow: hidden;
+  min-width: 0;
+  
 }
 
 .filters {
@@ -114,10 +109,9 @@ h2{
   margin-bottom: 10px;
   position: sticky;
   top: 0;
-  
   z-index: 1;
   padding-top: 10px;
-  
+  flex-wrap: wrap;
 }
 
 .filters button {
@@ -127,16 +121,11 @@ h2{
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
-  width: 25rem;
+  width: 100%;
+  max-width: 25rem;
   display: flex;
   align-items: center;
   gap: 5px;
-  margin-left: 1rem;
-}
-.list{
-  border: 1px solid black;
- padding-top:0.5px;
- scrollbar-width:50px;
 }
 
 .categories {
@@ -146,15 +135,9 @@ h2{
   font-weight: 500;
   position: sticky;
   top: 60px;
- 
   z-index: 1;
   padding-top: 10px;
-}
-
-.cards {
-  
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .scroll-container {
@@ -163,6 +146,12 @@ h2{
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 10px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 15px;
 }
 
 .card {
@@ -174,9 +163,9 @@ h2{
   padding: 15px;
   gap: 15px;
   height: 10rem;
-  width: 65rem;
-  margin-bottom: 10px;
+  width: 60rem;
   font-size: 20px;
+  margin-left: 5rem;
 }
 
 .img-box {
@@ -232,14 +221,40 @@ h2{
   background-color: #d32f2f;
 }
 
+/* ✅ Responsive Layout */
 @media screen and (max-width: 1024px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    border-right: none;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .img-box {
+    width: 100%;
+    height: 150px;
   }
 }

@@ -10,7 +10,7 @@ const bookings = [
   { status: 'Failed' },
   { status: 'Booked' },
   { status: 'Failed' },
-  { status: 'Failed' },{ status: 'Booked' },
+  { status: 'Failed' },{ status: 'Booked' },{ status: 'Booked' },{ status: 'Booked' },{ status: 'Booked' },
 ];
 
 export default function App() {
@@ -41,7 +41,7 @@ export default function App() {
         <main className="content">
           
           {/* ✅ Filters with real inputs */}
-          <div className="filters" style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+          <div className="filters" style={{ display: 'flex', gap: '2rem', marginBottom: '1rem' }}>
             {/* Date */}
             <label style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
               <MdDateRange  className='st'/>
@@ -53,7 +53,7 @@ export default function App() {
             </label>
 
             {/* Location */}
-            <label style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: '1px' }}>
               <MdLocationOn className='st'/>
               <input className='date'
                 type="text"
@@ -64,7 +64,7 @@ export default function App() {
             </label>
 
             {/* Time */}
-            <label style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: '1px' }}>
               <MdAccessTime  className='st' />
               <input className='date'
                 type="time"
@@ -89,7 +89,7 @@ export default function App() {
                 <div className="details">
                   <h3>R.k cricket stadium (1500/-)</h3>
                   <div className="tags">
-                    <span className="discount">50% OFF</span>
+                    <span className="discount">70% OFF</span>
                     <span>🕒 7pm - 9pm</span>
                   </div>
                   <div className="rating">⭐⭐⭐⭐⭐</div>
