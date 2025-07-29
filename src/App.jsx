@@ -39,8 +39,6 @@ export default function App() {
         </aside>
 
         <main className="content">
-          
-          {/* ✅ Filters with real inputs */}
           <div className="filters" style={{ display: 'flex', gap: '2rem', marginBottom: '1rem' }}>
             {/* Date */}
             <label style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
