@@ -18,10 +18,24 @@ const bookings = [
 ];
 
 const track = [
-  { completed: 'upcoming' },
-  { completed: 'ongoing' },
-  { completed: 'upcoming' },
-  { completed: 'ongoing' },
+  { completed: 'Upcoming' },
+  { completed: 'Ongoing' },
+  { completed: 'Upcoming' },
+  { completed: 'Ongoing' },
+  { completed: 'Upcoming' },
+  { completed: 'Ongoing' },
+  { completed: 'Upcoming' },
+  { completed: 'Ongoing' },
+];
+const transaction = [
+  { completed: 'Completed' },
+  { completed: 'Completed' },
+  { completed: 'Completed' },
+  { completed: 'Completed' },
+   { completed: 'Completed' },
+  { completed: 'Completed' },
+   { completed: 'Completed' },
+  { completed: 'Completed' },
 ];
 
 export default function App() {
@@ -124,6 +138,7 @@ export default function App() {
                           justifyContent: 'center',
                           marginBottom: '1rem',
                           marginRight: '1rem'
+                          
                         }}>
                           $1500
                         </button>
@@ -179,21 +194,17 @@ export default function App() {
               </div>
             )}
             {activePage === 'payment' && (
-              <div className="cards">
-                {bookings.map((b, i) => (
-                  <div className="card" key={i}>
-                    <div className="img-box"></div>
-                    <div className="details" style={{ width: '100%' }}>
-                      <h3 style={{ fontWeight: 'bold' }}>R.k cricket stadium</h3>
-                      <div className="tags">
-                        <span className="discount">50% OFF</span>
-                        <span style={{ color: '#fff5d8ff' }}>⭐⭐⭐⭐</span>
-                      </div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <div style={{ fontSize: '0.85rem' }}>
+              <div className="pays" >
+                {transaction.map((b, i) => (
+                  <div className="pay"  key={i} >
+                    <div className="img-box4"></div>
+                    <div className="details">
+                      <h3 style={{ fontWeight: 'bold',fontSize:'1.1rem' }}>R.k cricket stadium</h3>
+                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <div style={{ fontSize: '1rem',paddingBottom:'1rem'  }}>
                           🕒 7pm - 9pm<br />📍 Sathyamangalam
                         </div>
-                        <button className={`status ${b.status.toLowerCase()}`}>{b.status}</button>
+                        <button className={`status ${b.completed.toLowerCase()}`}>{b.completed}</button>
                       </div>
                     </div>
                   </div>
@@ -201,17 +212,17 @@ export default function App() {
               </div>
             )}
             {activePage === 'star' && (
-              <div className="cards">
+              <div className="stars">
                 {bookings.map((b, i) => (
-                  <div className="card" key={i}>
-                    <div className="img-box"></div>
-                    <div className="details" style={{ width: '100%' }}>
-                      <h3 style={{ fontWeight: 'bold' }}>R.k cricket stadium</h3>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <div style={{ fontSize: '0.85rem' }}>
+                  <div className="star" key={i}>
+                    <div className="img-box5"></div>
+                    <div className="details">
+                      <h3 style={{ fontWeight: 'bold',fontSize:'1.1rem' }}>R.k cricket stadium</h3>
+                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <div style={{ fontSize: '1rem',paddingBottom:'1rem' }}>
                           🕒 7pm - 9pm<br />📍 Sathyamangalam
                         </div>
-                        <button className={`status ${b.status.toLowerCase()}`}>{b.status}</button>
+                        <button className='sbutton'><FaStar  /> Star</button>
                       </div>
                     </div>
                   </div>
